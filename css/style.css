@@ -1,0 +1,983 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Rg';
+	src: url('..fonts/ProximaNova/ProximaNova-Regular.eot');
+	src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+		url('..fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+		url('..fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+		url('..fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Rg';
+	src: url('..fonts/ProximaNova/ProximaNova-Bold.eot');
+	src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
+		url('..fonts/ProximaNova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+		url('..fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+		url('..fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.ttf") format("truetype"); }
+
+  .far,
+  .fa-regular {
+    font-weight: 400; }
+  :root, :host {
+    --fa-style-family-classic: 'Font Awesome 6 Free';
+    --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free'; }
+
+  @font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-solid-900.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-solid-900.ttf") format("truetype"); }
+
+  .fas,
+  .fa-solid {
+    font-weight: 900; }
+  @font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-display: block;
+    font-weight: 400;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-brands-400.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-brands-400.ttf") format("truetype"); }
+
+  @font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-display: block;
+    font-weight: 900;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-solid-900.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-solid-900.ttf") format("truetype"); }
+
+  @font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-display: block;
+    font-weight: 400;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-regular-400.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-regular-400.ttf") format("truetype"); }
+  @font-face {
+    font-family: 'FontAwesome';
+    font-display: block;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-solid-900.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-solid-900.ttf") format("truetype"); }
+
+  @font-face {
+    font-family: 'FontAwesome';
+    font-display: block;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-brands-400.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-brands-400.ttf") format("truetype"); }
+
+  @font-face {
+    font-family: 'FontAwesome';
+    font-display: block;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-regular-400.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-regular-400.ttf") format("truetype");
+    unicode-range: U+F003,U+F006,U+F014,U+F016-F017,U+F01A-F01B,U+F01D,U+F022,U+F03E,U+F044,U+F046,U+F05C-F05D,U+F06E,U+F070,U+F087-F088,U+F08A,U+F094,U+F096-F097,U+F09D,U+F0A0,U+F0A2,U+F0A4-F0A7,U+F0C5,U+F0C7,U+F0E5-F0E6,U+F0EB,U+F0F6-F0F8,U+F10C,U+F114-F115,U+F118-F11A,U+F11C-F11D,U+F133,U+F147,U+F14E,U+F150-F152,U+F185-F186,U+F18E,U+F190-F192,U+F196,U+F1C1-F1C9,U+F1D9,U+F1DB,U+F1E3,U+F1EA,U+F1F7,U+F1F9,U+F20A,U+F247-F248,U+F24A,U+F24D,U+F255-F25B,U+F25D,U+F271-F274,U+F278,U+F27B,U+F28C,U+F28E,U+F29C,U+F2B5,U+F2B7,U+F2BA,U+F2BC,U+F2BE,U+F2C0-F2C1,U+F2C3,U+F2D0,U+F2D2,U+F2D4,U+F2DC; }
+
+  @font-face {
+    font-family: 'FontAwesome';
+    font-display: block;
+    src: url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-v4compatibility.woff2") format("woff2"), url("..fonts\fontawesome-free-6.2.1-web/webfonts/fa-v4compatibility.ttf") format("truetype");
+    unicode-range: U+F041,U+F047,U+F065-F066,U+F07D-F07E,U+F080,U+F08B,U+F08E,U+F090,U+F09A,U+F0AC,U+F0AE,U+F0B2,U+F0D0,U+F0D6,U+F0E4,U+F0EC,U+F10A-F10B,U+F123,U+F13E,U+F148-F149,U+F14C,U+F156,U+F15E,U+F160-F161,U+F163,U+F175-F178,U+F195,U+F1F8,U+F219,U+F27A; }
+
+
+/*.navigation-bgd {
+    position: absolute;
+    background: #000000;
+    top: 180px;
+    height: 80px;
+}
+
+.video-demo-bgd {
+    position: absolute;
+    background: #666666;
+    top: 900px;
+    height: 820px;
+}*/
+
+.container-bgd {
+  background: #f0d58c;
+  /*say no to different backgrounds css*/
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.navigation {
+    width: 1170px;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.navigation-logo {
+  margin-bottom: 12px;
+    color: #ffffff;
+    height: 14px;
+    font-family: 'Proxima Nova Rg';
+    src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
+    url('..fonts/ProximaNova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+    url('..fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+    url('..fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.navigation-list {
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.navigation-list li {
+    padding-right: 35px;
+    font-size: 16px;
+    font-family: 'Proxima Nova Rg', sans-serif;
+}
+
+.navigation-list li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation button {
+    margin-left: 385px;
+    border: 2px solid #ca3c3c;
+    background-color: #000000;
+    width: 92px;
+    color: #ca3c3c;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+    padding: 10px 16px;
+}
+
+.video-demo {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1170px;
+    height: 820px;
+    opacity: 0.502;
+    background-color: #000000;
+    background-image: url("../img/Artemis-program.png");
+    background-size:100% 100%;
+}
+
+.video-play {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.play-ico {
+    font-family: 'Font Awesome 6 Free';
+    width: 129px;
+    height: 129px;
+    color: #ffffff;
+    justify-content: center;
+}
+
+.video-demo-list h1 {
+    height: 60px;
+    font-family: 'Proxima Nova Rg', sans-serif;
+    color: #ffffff;
+}
+
+.video-demo-list p {
+    height: 16px;
+    font-family: 'Proxima Nova Rg', sans-serif;
+    color: #ca3c3c;
+    text-align: left;
+}
+
+.our-services {
+    width: 1170px;
+    height: 360px;
+    background-color: #ca3c3c;
+    display: flex;
+    justify-content: center;
+}
+
+.our-services-header {
+    font: 72px;
+    font-family: 'Proxima Nova Rg', sans-serif;
+    color: #ffffff;
+    margin: 50px;
+}
+
+.our-services-header hr {
+    border: 10px solid white;
+}
+
+.cloud-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud-ico {
+    margin: 50px 20px;
+    font-family: 'Proxima Nova Rg', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    border-color: #ffffff;
+    border-width: 3px;
+    text-align: center;
+    /*vertical-align: middle;*/
+}
+
+.lightning-feature {
+    display: flex;
+}
+
+.feature {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.feature-description {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 1170px;
+  background-color: #ffffff;
+}
+
+.icons-png {
+  margin: 55px auto;
+}
+
+.our-works {
+  width: 1170px;
+  background-color: #ebebeb;
+}
+
+.our-works-header {
+  font: 72px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #363636;
+  margin: 50px 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.our-works-header hr {
+  border: 10px solid #363636;
+  width: 010%;
+}
+
+/*.our-works-button {}*/
+
+.our-works-button button {
+  margin-right: 10px;
+  border: 2px solid #ca3c3c;
+  background-color: #ca3c3c;
+  width: 92px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.our-works-blocks {
+  margin: 65px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #ebebeb;
+}
+
+.upper-block {
+  margin-right: 29px;
+  width: 371px;
+  height: 371px;
+  background: #cccccc;
+
+}
+
+.name-preject {
+  width: 371px;
+  height: 100px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 271px;
+  left: 0;
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.name-preject-header {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  text-transform: uppercase;
+  color: #ca3c3c;
+  font-size: 18px;
+}
+
+.name-preject-description {
+  margin-top: 13px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #898989;
+  font-size: 14px;
+}
+
+.lower-block {
+  margin-top: 29px;
+  margin-right: 29px;
+  width: 371px;
+  height: 371px;
+  background: #cccccc;
+}
+
+.upper-block-last {
+  width: 371px;
+  height: 371px;
+  background: #cccccc;
+}
+
+.lower-block-last {
+  margin-top: 29px;
+  width: 371px;
+  height: 371px;
+  background: #cccccc;
+}
+
+.contact-us {
+  width: 1170px;
+  background-color: #ebebeb;
+}
+
+.contact-us-header {
+  margin: 50px 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-us-header h1 {
+  font: 72px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #363636;
+}
+
+.contact-us-header hr {
+  border: 10px solid #363636;
+  width: 10%;
+}
+
+.contact-us-header p {
+  font: 16px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #898989;
+  width: 450px;
+  margin-top: 30px;
+}
+
+.contact-us-ico {
+  display: inline;
+}
+
+.contact-us-ico img {
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
+}
+
+.forms {
+  margin-top: 70px;
+}
+
+.form-item {
+  margin-bottom: 10px;
+  margin-right: 30px;
+  width: 371px;
+  border: 1px solid silver;
+  padding: 10px;
+}
+
+fieldset {
+  border: none;
+}
+
+label,
+input,
+button,
+textarea {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+input[type="checkbox"] {
+  display: initial;
+  width: initial;
+}
+
+input,
+textarea {
+    padding: 10px 0;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: 1px solid silver;
+    box-shadow: 2px 2px 5px rgba(0,0,0, .3);
+}
+
+.forms-block {
+  display: flex;
+}
+
+.forms-submit {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  width: 772px;
+  border: 1px solid silver;
+  padding: 10px;
+}
+
+.button-submit-p {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #ca3c3c;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.button-submit-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.forms-block button {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 370px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.finally {
+  background-color: #252525;
+  width: 1170px;
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-header {
+  margin-top: 50px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.footer-description {
+  margin-top: 20px;
+  color: #555555;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 14px;
+  width: 240px;
+}
+
+.finally img {
+  margin: 20px auto;
+  width: 20px;
+  height: auto;
+}
+
+.jack-efron {
+  opacity: 0.502;
+  width: 1170px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jack-efron-description {
+  margin-top: 50px;
+  width: 750px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.jack-efron  img {
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 70px;
+}
+
+.jack-efron  p {
+  margin-top: 10px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 21px;
+  color: #ffffff;
+}
+
+.jack-efron-list {
+  display: flex;
+}
+
+.jack-efron-circle {
+  margin: 20px 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  border-color: #ffffff;
+  border-width: 3px;
+}
+
+.jack-efron-circle-solid {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  border-color: #ffffff;
+  border-width: 3px;
+  background: #ffffff;
+}
+
+.our-team {
+  width: 1170px;
+  background-color: #ffffff;
+}
+
+.our-team-header {
+  font: 72px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #363636;
+  margin: 50px 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.our-team-header hr {
+  border: 10px solid #363636;
+  width: 010%;
+}
+
+.our-team-items {
+  display: flex;
+  justify-content: space-between
+}
+
+.michael-joe {
+  display: flex;
+  align-items: center;
+}
+
+.michael-joe-balls {
+  width: 171px;
+  height: 171px;
+  border-radius: 85px;
+  background-color: #cccccc;
+  border: 3px solid #ffffff;
+  border-color: #ffffff;
+  border-width: 3px;
+}
+
+.michael-joe-chicken  {
+  margin-left: -30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 85px;
+  background-color: #c93b3b;
+  /*border: 3px solid #ffffff;
+  border-color: #ffffff;
+  border-width: 3px;*/
+  display: flex;
+  align-items: center;
+}
+
+.michael-joe-chicken   img {
+  width: 20px;
+  margin: auto;
+}
+
+.michael-joe-wanted {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 85px;
+  background-color: #c93b3b;
+  display: flex;
+  align-items: center;
+}
+
+.michael-joe-wanted  img {
+  width: 20px;
+  margin: auto;
+}
+
+.michael-joe-description h1 {
+  margin: 20px 0 20px 100px;
+  font-size: 18px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #ca3c3c;
+}
+
+.michael-joe-description p {
+  margin: 20px 0 20px 100px;
+  font-size: 14px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #363636;
+  width: 260px;
+}
+
+.our-team-red-cross {
+  margin-left: 20px;
+  margin-bottom: 100px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #c93b3b;
+  display: flex;
+  align-items: center;
+}
+
+.our-team-cross {
+  height: 10px;
+  width: auto;
+  margin-top: auto;
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.red-cross {
+  width: 15px;
+  height: auto;
+  margin: auto;
+  position: relative;
+}
+
+.followers {
+  display: flex;
+  justify-content: space-between;
+  width: 1170px;
+  opacity: 0.502;
+  background-color: #000000;
+}
+
+.followers-present {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.followers-present img {
+  margin-top: 50px;
+  width: 62px;
+  height: auto;
+}
+
+.followers-present h1 {
+  margin-top: 50px;
+  font-size: 72px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #ffffff;
+}
+
+.followers-present p {
+  margin-top: 15px;
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #ffffff;
+}
+
+.our-skills {
+  width: 1170px;
+  background-color: #ffffff;
+}
+
+.our-skills-header {
+  font: 72px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  color: #363636;
+  margin: 50px 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.our-skills-header hr {
+  border: 10px solid #363636;
+  width: 010%;
+}
+
+.our-skills-feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 810px;
+  position: relative;
+}
+
+.our-skills-circle {
+  top: 0;
+  margin: 50px 20px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  border: 10px solid #ca3c3c;
+  /*border-color: #ffffff;
+  border-width: 3px;*/
+  display: flex;
+  text-align: center;
+  /*vertical-align: middle;*/
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+}
+
+.our-skills-circle p {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 18px;
+  color: #ca3c3c;
+}
+
+.moon-eclipse {
+  width: 90px;
+  height: 170px;
+  /*border-radius: 85px;*/
+  border: 10px solid white;
+  background: white;
+  position: relative;
+  left: 0px;
+  bottom: 80px;
+}
+
+.second-moon {
+  width: 70px;
+  height: 200px;
+  border: 10px solid white;
+  background: white;
+  position: relative;
+  left: 20px;
+  bottom: 0px;
+}
+
+.third-moon {
+  width: 200px;
+  height: 70px;
+  border: 10px solid white;
+  background: white;
+  position: relative;
+  z-index: 1;
+  left: 20px;
+  bottom: 50px;
+}
+
+.fourth-moon {
+  width: 70px;
+  height: 100px;
+  border: 10px solid white;
+  background: white;
+  position: relative;
+  left: 20px;
+  bottom: 50px;
+}
+
+.about-our-skills {
+  width: 780px;
+  margin-top: 100px;
+}
+
+.about-our-skills h1 {
+  margin-left: 100px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 18px;
+  color: #ca3c3c;
+}
+
+.about-our-skills p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 100px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 14px;
+  color: #363636;
+}
+
+.mutual-box {
+  display: flex;
+}
+
+/*.section {
+  it is empty rulesets
+}*/
+
+.artemis-button {
+  margin-top: 300px;
+  margin-bottom: 15px;
+  display: flex;
+  padding: 20px auto;
+  height: 50px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.artemis-button img, .artemis-button-closed img {
+  margin-left: 20px;
+  width: 15px;
+  height: auto;
+}
+
+.artemis-button h3, .artemis-button-closed h3 {
+  margin: 20px 50px 20px 20px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 14px;
+  color: #c93b3b;
+}
+
+.artemis-button p, .artemis-button-closed p {
+  font-size: 14px;
+  color: #c93b3b;
+}
+
+.section p {
+  margin-right: 10px;
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 14px;
+  color: #363636;
+}
+
+.artemis-button-closed {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  padding: 20px auto;
+  height: 50px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-stealing {
+width: 1170px;
+background-color: #c93b3b;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.email-stealing h1 {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 36px;
+  color: #ffffff;
+  margin: 10px 30px;
+}
+
+.email-stealing-button {
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  padding: 20px 30px;
+  height: 50px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  background: white;
+  color: #c93b3b;
+  font-size: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.branding {
+  width: 1170px;
+  opacity: 0.502;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branding-block {
+  background-color: #998c8c;
+  width: 171px;
+  height: 97px;
+  margin: 35px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branding-block img {
+  width: 150px;
+  height: auto;
+}
